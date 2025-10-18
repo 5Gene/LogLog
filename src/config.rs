@@ -65,7 +65,7 @@ impl LogConfig {
     }
     
     /// 预编译所有正则表达式以提高性能
-    fn compile_regexes(&mut self) -> Result<()> {
+    pub fn compile_regexes(&mut self) -> Result<()> {
         for category in &mut self.categories {
             for child in &mut category.children {
                 for msg in &mut child.msgs {

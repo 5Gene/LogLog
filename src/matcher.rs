@@ -94,7 +94,7 @@ impl LogMatcher {
     /// 
     /// 使用生命周期和Cow避免不必要的字符串拷贝
     /// 适合需要极致性能的场景
-    pub fn match_line_zero_copy<'a>(&self, line: &'a str, line_number: usize) -> Option<MatchResultZeroCopy<'a>> {
+    pub fn match_line_zero_copy<'a>(&'a self, line: &'a str, line_number: usize) -> Option<MatchResultZeroCopy<'a>> {
         let mut result = MatchResultZeroCopy::new(line, line_number);
         let mut has_match = false;
 
@@ -454,7 +454,7 @@ categories:
         let mut config = config;
         config.compile_regexes().unwrap();
         
-        let matcher = LogMatcher::new(config, false);
+        let matcher = LogMatcher::new(config);
         
         // 测试匹配
         let line = "bt_btm: start_btm init_bt process";
