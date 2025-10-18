@@ -1,0 +1,47 @@
+[package]
+name = "loglog"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# 配置解析
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+serde_json = "1.0"  # UI接口序列化
+
+# 正则表达式
+regex = "1.10"
+
+# 压缩文件支持
+zip = "0.6"
+flate2 = "1.0"
+tar = "0.4"
+
+# 高性能字符串匹配（Aho-Corasick算法）
+aho-corasick = "1.1"
+
+# 并行处理
+rayon = "1.8"
+
+# 错误处理
+anyhow = "1.0"
+thiserror = "1.0"
+
+# 日志输出
+log = "0.4"
+env_logger = "0.11"
+
+# 命令行参数
+clap = { version = "4.4", features = ["derive"] }
+
+# 性能优化
+ahash = "0.8"
+
+# 对象池（零拷贝优化）
+parking_lot = "0.12"  # 高性能锁
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+

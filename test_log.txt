@@ -1,0 +1,21 @@
+[2024-10-18 10:23:45.123] bt_btm: start_btm init_bt process started successfully
+[2024-10-18 10:23:45.234] bt_btm: BT_ERR001: Connection timeout
+[2024-10-18 10:23:45.345] bt_btm: connect fail due to remote device not responding
+[2024-10-18 10:23:46.123] bt_rfc: RFC_CONN established with device XX:XX:XX:XX:XX:XX
+[2024-10-18 10:23:47.234] WLog: SYNC_OK - Data synchronized successfully
+[2024-10-18 10:23:48.345] WLog: Health[steps]: 12345
+[2024-10-18 10:23:49.456] HealthData: 步数 data updated
+[2024-10-18 10:23:50.567] HealthData: 心率 data: 75 bpm
+[2024-10-18 10:23:51.678] MemMgr: GC start - free memory: 45%
+[2024-10-18 10:23:52.789] MemMgr: GC finish - free memory: 78%
+[2024-10-18 10:23:53.890] FileSystem: File open /data/log/test.log
+[2024-10-18 10:23:54.901] FileSystem: File write /data/log/test.log
+[2024-10-18 10:23:55.012] bt_rfc: RFC_DISCONN from device XX:XX:XX:XX:XX:XX
+[2024-10-18 10:23:56.123] WLog: SYNC_FAIL - Network connection lost
+[2024-10-18 10:23:57.234] MemMgr: OOM warning - only 5% memory available
+[2024-10-18 10:23:58.345] bt_btm: BT_ERR002: Invalid parameter
+[2024-10-18 10:23:59.456] Some other log without any tag
+[2024-10-18 10:24:00.567] bt_btm: start_btm init_bt error detected
+[2024-10-18 10:24:01.678] WLog: Health[heartrate]: 78
+[2024-10-18 10:24:02.789] FileSystem: File close /data/log/test.log
+

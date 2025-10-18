@@ -1,0 +1,74 @@
+categories:
+  - app: 蓝牙
+    children:
+      - name: bt_btm
+        tag: bt_btm
+        msgs:
+          - keys: ["start_btm", "init_bt"]
+            ignores: ["error", "fail"]
+            mean: "蓝牙启动"
+            level: "i"
+          - keys: ["connect", "fail"]
+            mean: "蓝牙连接失败"
+            level: "e"
+          - regex: "BT_ERR(?P<code>\\d+):\\s*(?P<desc>.*)"
+            mean: "蓝牙错误"
+            level: "e"
+      
+      - name: bt_rfc
+        tag: bt_rfc
+        msgs:
+          - keys: ["RFC_CONN"]
+            mean: "RFC 连接"
+            level: "d"
+          - keys: ["RFC_DISCONN"]
+            mean: "RFC 断开"
+            level: "d"
+      
+  - app: 健康
+    children:
+      - name: 连接层
+        tag: WLog
+        msgs:
+          - keys: ["SYNC_OK"]
+            mean: "同步成功"
+            level: "i"
+          - keys: ["SYNC_FAIL"]
+            mean: "同步失败"
+            level: "e"
+          - regex: "Health\\[(?P<type>\\w+)\\]:\\s*(?P<value>\\d+)"
+            mean: "健康数据"
+            level: "i"
+      
+      - name: 数据层
+        tag: HealthData
+        msgs:
+          - keys: ["步数"]
+            mean: "步数数据"
+            level: "d"
+          - keys: ["心率"]
+            mean: "心率数据"
+            level: "d"
+
+  - app: 系统
+    children:
+      - name: 内存管理
+        tag: MemMgr
+        msgs:
+          - keys: ["OOM"]
+            mean: "内存溢出"
+            level: "e"
+          - keys: ["GC", "start"]
+            mean: "垃圾回收开始"
+            level: "d"
+          - keys: ["GC", "finish"]
+            mean: "垃圾回收结束"
+            level: "d"
+      
+      - name: 文件系统
+        tag: FileSystem
+        msgs:
+          - regex: "File\\s+(?P<op>open|close|read|write)\\s+(?P<path>\\S+)"
+            mean: "文件操作"
+            level: "d"
+
